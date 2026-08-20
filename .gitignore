@@ -1,0 +1,7 @@
+governanca/*.duckdb.wal
+.Rhistory
+.Rproj.user/
+*.Rproj
+__pycache__/
+.DS_Store
+Thumbs.db
