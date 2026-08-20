@@ -33,7 +33,8 @@ vínculo com commits. Nada de reconstruir a trilha na véspera.
       - [ ] E-mails de cada um (para `git commit --author="Nome <email>"`)
 - [ ] Link/repositório-modelo do professor, se/quando for distribuído
       (por ora: construir a estrutura do zero conforme cap. 5 do PDF)
-- [ ] Repositório remoto no GitHub (org/URL) para habilitar o GitHub Pages
+- [x] Repositório remoto no GitHub: https://github.com/InfraKings/tra48-vertiportos
+      (público, conta InfraKings) — GitHub Pages ainda a habilitar
 - [ ] Metas do projeto (2 a 4) — primeiro `./gov meta ...` a rodar
 
 ## Meu papel operacional
