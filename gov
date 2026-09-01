@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Wrapper fino: ./gov <comando> chama governanca/scripts/gov.py na raiz do repo.
+# Unico caminho de escrita do banco -- ver governanca/scripts/gov.py.
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$DIR/governanca/scripts/gov.py" "$@"

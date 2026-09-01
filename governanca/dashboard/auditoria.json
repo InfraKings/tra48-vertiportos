@@ -1,0 +1,19 @@
+{
+  "gerado_em": "2026-09-01T08:46:09.880802",
+  "rastreabilidade": {
+    "pct_arquivos_vinculados_a_decisao": null,
+    "pct_decisoes_vinculadas_a_meta": null,
+    "pct_experimentos_vinculados_a_decisao": null,
+    "nos_orfaos": []
+  },
+  "cadencia_por_semana": [],
+  "higiene": {
+    "pendencias_abertas_ha_mais_de_14_dias": [],
+    "tarefas_sem_prazo": []
+  },
+  "postura_critica_ia": {
+    "distribuicao": {},
+    "taxa_aceite_integral": null,
+    "alerta_aceite_alto": false
+  }
+}

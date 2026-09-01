@@ -1,0 +1,68 @@
+name: governanca
+
+# Publicacao automatica do grafo executivo (cap. 5.2/5.5 do enunciado).
+# Garante que docs/ (GitHub Pages) e governanca/dashboard/ sejam sempre o
+# espelho fiel do banco: roda `./gov update` a cada push e comita de volta
+# se algo tiver sido registrado sem que o autor rodasse update localmente.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "governanca/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  atualizar-e-publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install duckdb
+
+      - name: Regenerar dump, grafo executivo e auditoria
+        run: ./gov update
+
+      - name: Comitar saida regenerada, se houver diferenca
+        run: |
+          git config user.name "gov-bot"
+          git config user.email "gov-bot@users.noreply.github.com"
+          git add governanca/dump.sql governanca/dashboard docs
+          if ! git diff --cached --quiet; then
+            git commit -m "gov: regenerar dump, grafo executivo e auditoria [skip ci]"
+            git push
+          else
+            echo "nada para atualizar"
+          fi
+
+      - name: Publicar no GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  publicar:
+    needs: atualizar-e-publicar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

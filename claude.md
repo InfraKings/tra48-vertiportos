@@ -70,6 +70,15 @@ docs/
 .github/workflows/
 ```
 
+**Feito (2026-09-01):** `governanca/` construído — schema (`schemas/schema.sql`)
+com as entidades do cap. 5.3 e a tabela `relacoes` como arestas do grafo
+executivo, `./gov` (CLI em `governanca/scripts/gov.py`) como único caminho
+de escrita, `./gov update` regenerando `dump.sql`, `dashboard/` e `docs/`.
+Banco ainda vazio — nenhuma meta/decisão real registrada, e-mails dos
+integrantes ainda não preenchidos (bloqueia `git commit --author`), GitHub
+Pages ainda não habilitado nas configurações do repositório. Ver
+`governanca/README.md`.
+
 Se/quando o template oficial do professor aparecer, migro para ele em vez de
 manter a estrutura caseira.
 
