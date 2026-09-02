@@ -1,6 +1,6 @@
 -- dump.sql -- historia legivel do banco de governanca, gerada por ./gov update.
 -- Fonte de verdade e governanca/projeto.duckdb; este arquivo e derivado.
--- Gerado em 2026-09-02T08:55:13.679129
+-- Gerado em 2026-09-02T08:55:46.345758
 
 -- TRA-48 Projeto B1 -- Camada B (governanca)
 -- Esquema do banco de governanca / grafo executivo.
