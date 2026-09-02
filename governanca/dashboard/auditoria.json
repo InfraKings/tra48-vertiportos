@@ -1,12 +1,19 @@
 {
-  "gerado_em": "2026-09-02T11:56:05.373824",
+  "gerado_em": "2026-09-02T09:15:49.246250",
   "rastreabilidade": {
     "pct_arquivos_vinculados_a_decisao": null,
-    "pct_decisoes_vinculadas_a_meta": null,
+    "pct_decisoes_vinculadas_a_meta": 0.0,
     "pct_experimentos_vinculados_a_decisao": null,
-    "nos_orfaos": []
+    "nos_orfaos": [
+      "decisoes:1"
+    ]
   },
-  "cadencia_por_semana": [],
+  "cadencia_por_semana": [
+    {
+      "semana": "2026-W35",
+      "registros": 1
+    }
+  ],
   "higiene": {
     "pendencias_abertas_ha_mais_de_14_dias": [],
     "tarefas_sem_prazo": []

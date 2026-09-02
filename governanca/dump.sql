@@ -1,6 +1,6 @@
 -- dump.sql -- historia legivel do banco de governanca, gerada por ./gov update.
 -- Fonte de verdade e governanca/projeto.duckdb; este arquivo e derivado.
--- Gerado em 2026-09-02T11:56:05.352787
+-- Gerado em 2026-09-02T09:15:49.225679
 
 -- TRA-48 Projeto B1 -- Camada B (governanca)
 -- Esquema do banco de governanca / grafo executivo.
@@ -202,6 +202,13 @@ CREATE TABLE IF NOT EXISTS relacoes (
 -- ==================== DADOS ====================
 
 -- integrantes (3 linha(s))
-INSERT INTO integrantes (nome, email) VALUES ('Gilberto', NULL);
-INSERT INTO integrantes (nome, email) VALUES ('Guilherme', NULL);
+INSERT INTO integrantes (nome, email) VALUES ('Gilberto', 'gilberto@tra48.local');
+INSERT INTO integrantes (nome, email) VALUES ('Guilherme', 'guilherme@tra48.local');
 INSERT INTO integrantes (nome, email) VALUES ('Vitor', 'biasevitor@gmail.com');
+
+-- pendencias (2 linha(s))
+INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (1, 'Link/repositorio-modelo do professor ainda nao distribuido -- por ora seguimos a estrutura propria do cap. 5 do PDF', 'Vitor', NULL, '2026-09-02T09:15:34.453841', NULL, NULL, 'ee7191300d69f67eadabded49ced6667f5cd623d');
+INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (2, 'Metas do projeto (2 a 4) ainda nao definidas/registradas no banco -- bloqueia registro de decisoes, tarefas e fontes vinculadas', 'Vitor', NULL, '2026-09-02T09:15:34.645325', NULL, NULL, 'ee7191300d69f67eadabded49ced6667f5cd623d');
+
+-- decisoes (1 linha(s))
+INSERT INTO decisoes (id, descricao, justificativa, alternativas_descartadas, resp, meta_id, criado_em, commit_hash) VALUES (1, 'Usar e-mails placeholder (nome@tra48.local) para git commit --author', 'A comunicacao do grupo e via WhatsApp, nao e-mail; git exige um e-mail para identificar autoria de cada commit, mas esse e-mail nao precisa ser real ou alcancavel -- e so um identificador tecnico do commit, sem uso para contato', 'Coletar e-mail real de cada integrante -- descartado porque criaria fricção sem necessidade real: o grupo nao usa e-mail no dia a dia, e o campo do git nao exige que o endereco funcione', 'Vitor', NULL, '2026-09-02T09:15:29.823944', 'ee7191300d69f67eadabded49ced6667f5cd623d');

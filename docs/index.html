@@ -95,35 +95,35 @@
 <header class="top">
   <div class="title-block">
     <h1>TRA-48 &mdash; Grafo executivo</h1>
-    <p class="sub">Localiza&ccedil;&atilde;o de vertiportos em S&atilde;o Paulo &mdash; Camada B (governan&ccedil;a). Gerado por <code>./gov update</code> em 2026-09-02T11:56:05.373824.</p>
+    <p class="sub">Localiza&ccedil;&atilde;o de vertiportos em S&atilde;o Paulo &mdash; Camada B (governan&ccedil;a). Gerado por <code>./gov update</code> em 2026-09-02T09:15:49.246250.</p>
   </div>
-  <div class="beacon"><span class="dot"></span>auditoria: sem pendencias</div>
+  <div class="beacon alerta"><span class="dot"></span>auditoria: pendencias encontradas</div>
 </header>
 
 <section>
 <h2>Estado</h2>
 <div class="readout">
-      <div class="metric"><b>n/d</b><span>decis&otilde;es com meta</span></div>
+      <div class="metric"><b>0%</b><span>decis&otilde;es com meta</span></div>
       <div class="metric"><b>n/d</b><span>arquivos com decis&atilde;o</span></div>
       <div class="metric"><b>n/d</b><span>experimentos com decis&atilde;o</span></div>
-      <div class="metric"><b>0</b><span>n&oacute;s &oacute;rf&atilde;os</span></div>
-    </div>
+      <div class="metric"><b>1</b><span>n&oacute;s &oacute;rf&atilde;os</span></div>
+    </div><p class='orfaos'>&Oacute;rf&atilde;os: decisoes:1</p>
 </section>
 
 <section>
 <h2>Grafo executivo</h2>
 <p class="sub">N&oacute;s por tipo; arestas ligam decis&otilde;es, fontes, arquivos, experimentos e intera&ccedil;&otilde;es de IA &agrave;s metas do projeto.</p>
-<div class='grafo-grid'><div class='grafo-col'><h4>metas <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>decisoes <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>fontes_dados <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>arquivos <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>experimentos <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>interacoes_ia <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>tarefas <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>pendencias <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>referencias <span class='n'>(0)</span></h4></div></div><p class='sub' style='margin-top:1.1rem'>0 relacao(oes) no grafo (ver grafo.json para a estrutura completa, incluindo arestas).</p>
+<div class='grafo-grid'><div class='grafo-col'><h4>metas <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>decisoes <span class='n'>(1)</span></h4><div class='item' title='Vitor'>Usar e-mails placeholder (nome@tra48.local) para git commit --author</div></div><div class='grafo-col'><h4>fontes_dados <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>arquivos <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>experimentos <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>interacoes_ia <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>tarefas <span class='n'>(0)</span></h4></div><div class='grafo-col'><h4>pendencias <span class='n'>(2)</span></h4><div class='item' title='Vitor'>Link/repositorio-modelo do professor ainda nao distribuido -- por ora seguimos a...</div><div class='item' title='Vitor'>Metas do projeto (2 a 4) ainda nao definidas/registradas no banco -- bloqueia re...</div></div><div class='grafo-col'><h4>referencias <span class='n'>(0)</span></h4></div></div><p class='sub' style='margin-top:1.1rem'>0 relacao(oes) no grafo (ver grafo.json para a estrutura completa, incluindo arestas).</p>
 </section>
 
 <section>
 <h2>Tarefas e pend&ecirc;ncias</h2>
-<p class='vazio'>Nenhum registro ainda.</p><h3>Pendencias</h3><p class='vazio'>Nenhum registro ainda.</p>
+<p class='vazio'>Nenhum registro ainda.</p><h3>Pendencias</h3><div class='table-wrap'><table><thead><tr><th>#</th><th>descricao</th><th>resp</th><th>aberta em</th><th>resolvida em</th></tr></thead><tbody><tr class='tab-amber'><td>1</td><td>Link/repositorio-modelo do professor ainda nao distribuido -- por ora seguimos a estrutura propria do cap. 5 do PDF</td><td>Vitor</td><td>2026-09-02 09:15:34.453841</td><td>None</td></tr><tr class='tab-amber'><td>2</td><td>Metas do projeto (2 a 4) ainda nao definidas/registradas no banco -- bloqueia registro de decisoes, tarefas e fontes vinculadas</td><td>Vitor</td><td>2026-09-02 09:15:34.645325</td><td>None</td></tr></tbody></table></div>
 </section>
 
 <section>
 <h2>Decis&otilde;es</h2>
-<p class='vazio'>Nenhum registro ainda.</p>
+<div class='table-wrap'><table><thead><tr><th>#</th><th>descricao</th><th>justificativa</th><th>alternativas descartadas</th><th>resp</th><th>quando</th></tr></thead><tbody><tr><td>1</td><td>Usar e-mails placeholder (nome@tra48.local) para git commit --author</td><td>A comunicacao do grupo e via WhatsApp, nao e-mail; git exige um e-mail para identificar autoria de cada commit, mas esse e-mail nao precisa ser real ou alcancavel -- e so um identificador tecnico do commit, sem uso para contato</td><td>Coletar e-mail real de cada integrante -- descartado porque criaria fricção sem necessidade real: o grupo nao usa e-mail no dia a dia, e o campo do git nao exige que o endereco funcione</td><td>Vitor</td><td>2026-09-02 09:15:29.823944</td></tr></tbody></table></div>
 </section>
 
 <section>

@@ -1,4 +1,26 @@
 {
-  "nodes": [],
+  "nodes": [
+    {
+      "id": "pendencias:1",
+      "tipo": "pendencias",
+      "label": "Link/repositorio-modelo do professor ainda nao distribuido -- por ora seguimos a...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-02 09:15:34.453841"
+    },
+    {
+      "id": "pendencias:2",
+      "tipo": "pendencias",
+      "label": "Metas do projeto (2 a 4) ainda nao definidas/registradas no banco -- bloqueia re...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-02 09:15:34.645325"
+    },
+    {
+      "id": "decisoes:1",
+      "tipo": "decisoes",
+      "label": "Usar e-mails placeholder (nome@tra48.local) para git commit --author",
+      "resp": "Vitor",
+      "criado_em": "2026-09-02 09:15:29.823944"
+    }
+  ],
   "edges": []
 }

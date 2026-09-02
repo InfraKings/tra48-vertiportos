@@ -30,13 +30,18 @@ vínculo com commits. Nada de reconstruir a trilha na véspera.
       está trabalhando** — mesmo que a conversa comigo seja sempre pela mesma
       conta/pessoa, pergunto explicitamente qual integrante é o autor/`--resp`
       antes de cada registro `./gov` ou commit.
-      - [ ] E-mails de cada um (para `git commit --author="Nome <email>"`)
-- [ ] Link/repositório-modelo do professor, se/quando for distribuído
-      (por ora: construir a estrutura do zero conforme cap. 5 do PDF)
+      - [x] E-mails de cada um: o grupo se comunica por WhatsApp, não e-mail,
+            então usamos placeholder `nome@tra48.local` só para
+            `git commit --author` (decisão #1 no banco).
 - [x] Repositório remoto no GitHub: https://github.com/InfraKings/tra48-vertiportos
       (público, conta InfraKings) — GitHub Pages habilitado e no ar
       (2026-09-02): https://infrakings.github.io/tra48-vertiportos/
-- [ ] Metas do projeto (2 a 4) — primeiro `./gov meta ...` a rodar
+
+Pendências abertas (link-modelo do professor, metas do projeto) e o restante
+do checklist operacional agora vivem só no banco de governança
+(`./gov status`, pendência #1 e #2) — não duplico aqui para não criar uma
+segunda fonte da verdade. Ver o painel publicado ou `./gov status` para o
+estado atual.
 
 ## Meu papel operacional
 
