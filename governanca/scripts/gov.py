@@ -382,170 +382,134 @@ DASHBOARD_TEMPLATE = """<!doctype html>
 <meta charset="utf-8">
 <title>TRA-48 -- Grafo executivo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #f5f6f8;
-    --surface: #ffffff;
-    --surface-2: #f0f1f4;
-    --border: #e3e5ea;
-    --text: #1c2128;
-    --text-muted: #6b7280;
-    --accent: #2f5fed;
-    --ok-bg: #e3fbe8;
-    --ok-text: #1a7f37;
-    --alert-bg: #ffebe9;
-    --alert-text: #cf222e;
-    --radius: 12px;
-    --shadow: 0 1px 2px rgba(20, 20, 40, .04), 0 6px 16px rgba(20, 20, 40, .04);
+    --paper: #eef2f1;
+    --panel: #ffffff;
+    --ink: #172630;
+    --muted: #5c6b70;
+    --line: #c7d1d0;
+    --amber: #b8760f;
+    --teal: #146b5e;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0d1117;
-      --surface: #151b23;
-      --surface-2: #1b222c;
-      --border: #2c333d;
-      --text: #e6edf3;
-      --text-muted: #8b949e;
-      --accent: #6ea8ff;
-      --ok-bg: #1a7f3730;
-      --ok-text: #4ac26b;
-      --alert-bg: #cf222e30;
-      --alert-text: #ff7b72;
-      --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 6px 20px rgba(0, 0, 0, .35);
+      --paper: #0e1a22;
+      --panel: #13232d;
+      --ink: #e7efee;
+      --muted: #93a5a9;
+      --line: #2a3d43;
+      --amber: #e0a53c;
+      --teal: #49b8a4;
     }
   }
   * { box-sizing: border-box; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Space Grotesk", -apple-system, "Segoe UI", sans-serif;
     margin: 0;
     line-height: 1.5;
   }
-  header.page {
-    max-width: 1180px;
-    margin-inline: auto;
-    padding: 3rem 2rem 1.5rem;
-  }
-  h1 { margin: 0; font-size: 1.6rem; font-weight: 700; letter-spacing: -.01em; }
-  .sub { color: var(--text-muted); margin: .4rem 0 0; font-size: .92rem; }
-  main {
-    max-width: 1180px;
-    margin-inline: auto;
-    padding: 0 2rem 4rem;
-    display: grid;
+  ::selection { background: var(--teal); color: var(--panel); }
+  .wrap { max-width: 1040px; margin-inline: auto; padding: 3.25rem 1.75rem 5rem; }
+  header.top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 2.5rem;
   }
-  section.card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 1.75rem 2rem;
-  }
-  section.card h2 {
-    margin: 0 0 .3rem;
-    font-size: 1.05rem;
-    font-weight: 650;
-  }
-  section.card > .sub { margin-bottom: 1.25rem; }
-  .selo { display: inline-flex; align-items: center; gap: .4rem; padding: .3rem .7rem; border-radius: 999px; font-weight: 600; font-size: .82rem; }
-  .selo.ok { background: var(--ok-bg); color: var(--ok-text); }
-  .selo.alerta { background: var(--alert-bg); color: var(--alert-text); }
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-    margin-top: 1.1rem;
-  }
-  .stat {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: .9rem 1rem;
-  }
-  .stat b { display: block; font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
-  .stat span { color: var(--text-muted); font-size: .8rem; }
-  table { width: 100%; border-collapse: collapse; font-size: .87rem; }
-  th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--text-muted); font-weight: 600; font-size: .76rem; text-transform: uppercase; letter-spacing: .02em; }
+  h1 { margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -.005em; }
+  .title-block .sub { margin: .5rem 0 0; max-width: 44rem; }
+  .sub { color: var(--muted); font-size: .9rem; }
+  .title-block .sub code { font-family: inherit; font-weight: 600; color: var(--ink); }
+  .beacon { display: inline-flex; align-items: center; gap: .55rem; font-size: .85rem; font-weight: 600; white-space: nowrap; padding-bottom: .2rem; }
+  .beacon .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px color-mix(in srgb, var(--teal) 22%, transparent); }
+  .beacon.alerta .dot { background: var(--amber); box-shadow: 0 0 0 3px color-mix(in srgb, var(--amber) 22%, transparent); }
+  section { padding: 2.25rem 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: none; padding-top: 0; }
+  section h2 { margin: 0 0 .35rem; font-size: 1.05rem; font-weight: 600; }
+  section > .sub { margin: 0 0 1.25rem; max-width: 44rem; }
+  .readout { display: flex; flex-wrap: wrap; gap: 2.25rem 2.75rem; margin-top: 1.25rem; }
+  .readout .metric { min-width: 6rem; }
+  .readout .metric b { display: block; font-size: 1.9rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .readout .metric span { display: block; margin-top: .2rem; color: var(--muted); font-size: .82rem; }
+  .orfaos { margin-top: 1.1rem; padding-left: 1rem; border-left: 3px solid var(--amber); font-size: .85rem; }
+  .grafo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0 1.75rem; }
+  .grafo-col { padding-left: 1.1rem; border-left: 1px solid var(--line); padding-bottom: .5rem; }
+  .grafo-col h4 { margin: 0 0 .6rem; font-size: .82rem; font-weight: 600; }
+  .grafo-col h4 .n { color: var(--muted); font-weight: 500; }
+  .grafo-col .item { font-size: .8rem; padding: .35rem 0; border-bottom: 1px solid var(--line); }
+  .grafo-col .item:last-of-type { border-bottom: none; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .87rem; margin-top: .25rem; }
+  th { text-align: left; font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: .74rem; color: var(--muted); padding: 0 .75rem .55rem 0; border-bottom: 1px solid var(--line); }
+  td { font-family: "Source Serif 4", Georgia, serif; padding: .65rem .75rem .65rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr { border-left: 3px solid transparent; }
+  tbody tr.tab-amber { border-left-color: var(--amber); }
+  tbody tr.tab-teal { border-left-color: var(--teal); }
+  tbody tr th:first-child, tbody tr td:first-child, thead tr th:first-child { padding-left: .85rem; }
   tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: var(--surface-2); }
-  code { background: var(--surface-2); border: 1px solid var(--border); padding: .1rem .35rem; border-radius: .35rem; font-size: .85em; }
-  .grafo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  .grafo-col h4 {
-    font-size: .72rem;
-    text-transform: uppercase;
-    letter-spacing: .04em;
-    color: var(--text-muted);
-    margin: 0 0 .55rem;
-    font-weight: 650;
-  }
-  .no {
-    font-size: .78rem;
-    padding: .45rem .55rem;
-    margin-bottom: .4rem;
-    border-radius: 8px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-  }
-  .vazio {
-    color: var(--text-muted);
-    font-size: .85rem;
-    padding: 1.5rem 0;
-    text-align: center;
-    border: 1px dashed var(--border);
-    border-radius: 10px;
-  }
-  .orfao { color: var(--alert-text); font-size: .85rem; margin-top: .75rem; }
-  h3 { font-size: .88rem; font-weight: 650; margin: 1.75rem 0 .75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .02em; }
+  tbody tr:hover td { background: color-mix(in srgb, var(--ink) 4%, transparent); }
+  code { font-family: inherit; }
+  h3 { margin: 2rem 0 .75rem; font-size: .92rem; font-weight: 600; }
+  .vazio { margin: .5rem 0 0; padding-left: 1rem; border-left: 3px solid var(--line); color: var(--muted); font-family: "Source Serif 4", Georgia, serif; font-style: italic; font-size: .9rem; }
+  :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media (max-width: 480px) { .wrap { padding: 2rem 1.1rem 3rem; } h1 { font-size: 1.3rem; } }
 </style>
 </head>
 <body>
-<header class="page">
-  <h1>TRA-48 &mdash; Grafo executivo</h1>
-  <p class="sub">Localiza&ccedil;&atilde;o de vertiportos em S&atilde;o Paulo &mdash; Camada B (governan&ccedil;a). Gerado por <code>./gov update</code> em __GERADO_EM__.</p>
+<div class="wrap">
+
+<header class="top">
+  <div class="title-block">
+    <h1>TRA-48 &mdash; Grafo executivo</h1>
+    <p class="sub">Localiza&ccedil;&atilde;o de vertiportos em S&atilde;o Paulo &mdash; Camada B (governan&ccedil;a). Gerado por <code>./gov update</code> em __GERADO_EM__.</p>
+  </div>
+  __BEACON__
 </header>
 
-<main>
-
-<section class="card">
+<section>
 <h2>Estado</h2>
 __ESTADO__
 </section>
 
-<section class="card">
+<section>
 <h2>Grafo executivo</h2>
 <p class="sub">N&oacute;s por tipo; arestas ligam decis&otilde;es, fontes, arquivos, experimentos e intera&ccedil;&otilde;es de IA &agrave;s metas do projeto.</p>
 __GRAFO__
 </section>
 
-<section class="card">
+<section>
 <h2>Tarefas e pend&ecirc;ncias</h2>
 __TAREFAS__
 </section>
 
-<section class="card">
+<section>
 <h2>Decis&otilde;es</h2>
 __DECISOES__
 </section>
 
-<section class="card">
+<section>
 <h2>Experimentos</h2>
 __EXPERIMENTOS__
 </section>
 
-<section class="card">
+<section>
 <h2>Intera&ccedil;&otilde;es com IA</h2>
 __IA__
 </section>
 
-</main>
+</div>
 </body>
 </html>
 """
@@ -553,49 +517,62 @@ __IA__
 
 def render_dashboard(con, graph, auditoria):
     orfaos = auditoria["rastreabilidade"]["nos_orfaos"]
-    selo = '<span class="selo alerta">auditoria: pendencias encontradas</span>' if orfaos or auditoria["postura_critica_ia"]["alerta_aceite_alto"] \
-        else '<span class="selo ok">auditoria: sem pendencias</span>'
+    alerta = bool(orfaos or auditoria["postura_critica_ia"]["alerta_aceite_alto"])
+    beacon = (
+        '<div class="beacon alerta"><span class="dot"></span>auditoria: pendencias encontradas</div>' if alerta
+        else '<div class="beacon"><span class="dot"></span>auditoria: sem pendencias</div>'
+    )
 
     def pct(x):
         return "n/d" if x is None else f"{x*100:.0f}%"
 
-    estado = f"""
-    <p>{selo}</p>
-    <div class="stats">
-      <div class="stat"><b>{pct(auditoria['rastreabilidade']['pct_decisoes_vinculadas_a_meta'])}</b><span>decis&otilde;es com meta</span></div>
-      <div class="stat"><b>{pct(auditoria['rastreabilidade']['pct_arquivos_vinculados_a_decisao'])}</b><span>arquivos com decis&atilde;o</span></div>
-      <div class="stat"><b>{pct(auditoria['rastreabilidade']['pct_experimentos_vinculados_a_decisao'])}</b><span>experimentos com decis&atilde;o</span></div>
-      <div class="stat"><b>{len(orfaos)}</b><span>n&oacute;s &oacute;rf&atilde;os</span></div>
-    </div>
-    """
+    estado = f"""<div class="readout">
+      <div class="metric"><b>{pct(auditoria['rastreabilidade']['pct_decisoes_vinculadas_a_meta'])}</b><span>decis&otilde;es com meta</span></div>
+      <div class="metric"><b>{pct(auditoria['rastreabilidade']['pct_arquivos_vinculados_a_decisao'])}</b><span>arquivos com decis&atilde;o</span></div>
+      <div class="metric"><b>{pct(auditoria['rastreabilidade']['pct_experimentos_vinculados_a_decisao'])}</b><span>experimentos com decis&atilde;o</span></div>
+      <div class="metric"><b>{len(orfaos)}</b><span>n&oacute;s &oacute;rf&atilde;os</span></div>
+    </div>"""
     if orfaos:
-        estado += "<p class='orfao'>&Oacute;rf&atilde;os: " + ", ".join(orfaos) + "</p>"
+        estado += "<p class='orfaos'>&Oacute;rf&atilde;os: " + ", ".join(orfaos) + "</p>"
 
     tipos = ["metas", "decisoes", "fontes_dados", "arquivos", "experimentos", "interacoes_ia", "tarefas", "pendencias", "referencias"]
     id_pos = {}
     cols_html = []
     for i, tipo in enumerate(tipos):
         nos = [n for n in graph["nodes"] if n["tipo"] == tipo]
-        col = [f"<div class='grafo-col'><h4>{tipo} ({len(nos)})</h4>"]
+        col = [f"<div class='grafo-col'><h4>{tipo} <span class='n'>({len(nos)})</span></h4>"]
         for j, n in enumerate(nos):
             id_pos[n["id"]] = (i, j)
-            col.append(f"<div class='no' title='{n['resp'] or ''}'>{n['label']}</div>")
+            col.append(f"<div class='item' title='{n['resp'] or ''}'>{n['label']}</div>")
         col.append("</div>")
         cols_html.append("".join(col))
     grafo_html = f"<div class='grafo-grid'>{''.join(cols_html)}</div>"
     grafo_html += f"<p class='sub' style='margin-top:1.1rem'>{len(graph['edges'])} relacao(oes) no grafo (ver grafo.json para a estrutura completa, incluindo arestas).</p>"
 
-    def table(headers, rows):
+    def table(headers, rows, row_classes=None):
         if not rows:
             return "<p class='vazio'>Nenhum registro ainda.</p>"
         head = "".join(f"<th>{h}</th>" for h in headers)
-        body = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
-        return f"<table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>"
+        body_rows = []
+        for i, r in enumerate(rows):
+            cls = f" class='{row_classes[i]}'" if row_classes else ""
+            body_rows.append(f"<tr{cls}>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
+        return f"<div class='table-wrap'><table><thead><tr>{head}</tr></thead><tbody>{''.join(body_rows)}</tbody></table></div>"
+
+    def tarefa_tab(status):
+        if status == "concluida":
+            return "tab-teal"
+        if status in ("aberta", "em_andamento"):
+            return "tab-amber"
+        return ""
 
     tarefas = con.execute("SELECT id, descricao, resp, prazo, status FROM tarefas ORDER BY prazo NULLS LAST").fetchall()
     pendencias = con.execute("SELECT id, descricao, resp, criado_em, resolvida_em FROM pendencias ORDER BY criado_em").fetchall()
-    tarefas_html = table(["#", "descricao", "resp", "prazo", "status"], tarefas)
-    tarefas_html += "<h3>Pendencias</h3>" + table(["#", "descricao", "resp", "aberta em", "resolvida em"], pendencias)
+    tarefas_html = table(["#", "descricao", "resp", "prazo", "status"], tarefas, [tarefa_tab(r[4]) for r in tarefas])
+    tarefas_html += "<h3>Pendencias</h3>" + table(
+        ["#", "descricao", "resp", "aberta em", "resolvida em"], pendencias,
+        ["tab-teal" if r[4] else "tab-amber" for r in pendencias],
+    )
 
     decisoes = con.execute(
         "SELECT id, descricao, justificativa, alternativas_descartadas, resp, criado_em FROM decisoes ORDER BY criado_em"
@@ -611,10 +588,11 @@ def render_dashboard(con, graph, auditoria):
         "SELECT id, proposito, aceite, critica_humana, resp, criado_em FROM interacoes_ia ORDER BY criado_em"
     ).fetchall()
     dist = auditoria["postura_critica_ia"]["distribuicao"]
-    ia_html = f"<p>Distribuicao de aceite: {dist}</p>" + table(["#", "proposito", "aceite", "critica humana", "resp", "quando"], ia)
+    ia_html = f"<p class='sub'>Distribuicao de aceite: {dist}</p>" + table(["#", "proposito", "aceite", "critica humana", "resp", "quando"], ia)
 
     html = DASHBOARD_TEMPLATE
     html = html.replace("__GERADO_EM__", auditoria["gerado_em"])
+    html = html.replace("__BEACON__", beacon)
     html = html.replace("__ESTADO__", estado)
     html = html.replace("__GRAFO__", grafo_html)
     html = html.replace("__TAREFAS__", tarefas_html)
