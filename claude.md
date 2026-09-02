@@ -34,7 +34,8 @@ vínculo com commits. Nada de reconstruir a trilha na véspera.
 - [ ] Link/repositório-modelo do professor, se/quando for distribuído
       (por ora: construir a estrutura do zero conforme cap. 5 do PDF)
 - [x] Repositório remoto no GitHub: https://github.com/InfraKings/tra48-vertiportos
-      (público, conta InfraKings) — GitHub Pages ainda a habilitar
+      (público, conta InfraKings) — GitHub Pages habilitado e no ar
+      (2026-09-02): https://infrakings.github.io/tra48-vertiportos/
 - [ ] Metas do projeto (2 a 4) — primeiro `./gov meta ...` a rodar
 
 ## Meu papel operacional
