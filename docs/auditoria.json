@@ -1,17 +1,19 @@
 {
-  "gerado_em": "2026-09-02T12:16:24.953802",
+  "gerado_em": "2026-09-14T17:06:35.844215",
   "rastreabilidade": {
-    "pct_arquivos_vinculados_a_decisao": null,
-    "pct_decisoes_vinculadas_a_meta": 0.0,
-    "pct_experimentos_vinculados_a_decisao": null,
-    "nos_orfaos": [
-      "decisoes:1"
-    ]
+    "pct_arquivos_vinculados_a_decisao": 1.0,
+    "pct_decisoes_vinculadas_a_meta": 0.9,
+    "pct_experimentos_vinculados_a_decisao": 1.0,
+    "nos_orfaos": []
   },
   "cadencia_por_semana": [
     {
       "semana": "2026-W35",
       "registros": 1
+    },
+    {
+      "semana": "2026-W37",
+      "registros": 17
     }
   ],
   "higiene": {
@@ -19,8 +21,10 @@
     "tarefas_sem_prazo": []
   },
   "postura_critica_ia": {
-    "distribuicao": {},
-    "taxa_aceite_integral": null,
+    "distribuicao": {
+      "parcial": 3
+    },
+    "taxa_aceite_integral": 0.0,
     "alerta_aceite_alto": false
   }
 }

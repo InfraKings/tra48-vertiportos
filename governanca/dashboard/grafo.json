@@ -1,6 +1,41 @@
 {
   "nodes": [
     {
+      "id": "metas:1",
+      "tipo": "metas",
+      "label": "Formular, justificar e resolver computacionalmente um modelo de localizacao de h...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 14:58:07.965163"
+    },
+    {
+      "id": "metas:2",
+      "tipo": "metas",
+      "label": "Estimar a demanda capturavel por UAM a partir da Pesquisa OD do Metro de SP e pr...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 14:58:08.152045"
+    },
+    {
+      "id": "metas:3",
+      "tipo": "metas",
+      "label": "Manter repositorio publico com banco de governanca auditavel, grafo executivo na...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 14:58:08.332490"
+    },
+    {
+      "id": "metas:4",
+      "tipo": "metas",
+      "label": "Garantir que cada integrante do grupo seja capaz de explicar e defender qualquer...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 14:58:08.503604"
+    },
+    {
+      "id": "tarefas:1",
+      "tipo": "tarefas",
+      "label": "Avaliar extensao do modelo com opcao de nao-capturar demanda (arco 'nao-voar' en...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:59.557755"
+    },
+    {
       "id": "pendencias:1",
       "tipo": "pendencias",
       "label": "Link/repositorio-modelo do professor ainda nao distribuido -- por ora seguimos a...",
@@ -20,7 +55,460 @@
       "label": "Usar e-mails placeholder (nome@tra48.local) para git commit --author",
       "resp": "Vitor",
       "criado_em": "2026-09-02 09:15:29.823944"
+    },
+    {
+      "id": "decisoes:2",
+      "tipo": "decisoes",
+      "label": "Base de demanda = Tabela 25 da Pesquisa OD 2017 (individual motorizado: carro/ta...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:48.645314"
+    },
+    {
+      "id": "decisoes:3",
+      "tipo": "decisoes",
+      "label": "Uso da Pesquisa OD 2017 como base, nao a Pesquisa OD 2023 mais recente",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:48.827885"
+    },
+    {
+      "id": "decisoes:4",
+      "tipo": "decisoes",
+      "label": "Formulacao = p-hub median nao-capacitado de alocacao multipla (Campbell, 1994), ...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:49.011769"
+    },
+    {
+      "id": "decisoes:5",
+      "tipo": "decisoes",
+      "label": "Reducao de instancia: 517 zonas OD -> 8 macrorregioes via k-means ponderado por ...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:49.204406"
+    },
+    {
+      "id": "decisoes:6",
+      "tipo": "decisoes",
+      "label": "Candidatos a vertiporto = 1 heliponto ANAC real mais proximo do centroide de dem...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:49.415193"
+    },
+    {
+      "id": "decisoes:7",
+      "tipo": "decisoes",
+      "label": "Hipotese de demanda capturavel por UAM = filtro de distancia (par OD >= 8km) x f...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:49.597884"
+    },
+    {
+      "id": "decisoes:8",
+      "tipo": "decisoes",
+      "label": "Sem custo fixo de implantacao no objetivo; numero de vertiportos p tratado como ...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:49.780181"
+    },
+    {
+      "id": "decisoes:9",
+      "tipo": "decisoes",
+      "label": "Modelo sem restricao de capacidade por vertiporto (uncapacitated)",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:49.962230"
+    },
+    {
+      "id": "decisoes:10",
+      "tipo": "decisoes",
+      "label": "Implementacao em R + lpSolve, sem bibliotecas de geoprocessamento pesadas (sf/rg...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:50.144889"
+    },
+    {
+      "id": "fontes_dados:1",
+      "tipo": "fontes_dados",
+      "label": "Pesquisa Origem e Destino 2017 -- Metro de Sao Paulo (Tabelas 1, 6, 25 + geometr...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:48.284150"
+    },
+    {
+      "id": "fontes_dados:2",
+      "tipo": "fontes_dados",
+      "label": "Helipontos privados -- ANAC (Dados Abertos)",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:48.465575"
+    },
+    {
+      "id": "arquivos:1",
+      "tipo": "arquivos",
+      "label": "Formulacao matematica completa (conjuntos, parametros, variaveis, objetivo, rest...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:54.815257"
+    },
+    {
+      "id": "arquivos:2",
+      "tipo": "arquivos",
+      "label": "Revisao de literatura: 7 referencias sobre modelos de localizacao de hubs e dema...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:55.065603"
+    },
+    {
+      "id": "arquivos:3",
+      "tipo": "arquivos",
+      "label": "Documentacao de origem, formato, cobertura e limitacoes dos dados brutos (OD2017...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:55.521140"
+    },
+    {
+      "id": "arquivos:4",
+      "tipo": "arquivos",
+      "label": "Guia de reproducao do pipeline e resumo do resultado principal",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:55.809198"
+    },
+    {
+      "id": "arquivos:5",
+      "tipo": "arquivos",
+      "label": "Script de entrada do pipeline reprodutivel de ponta a ponta",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:56.056378"
+    },
+    {
+      "id": "arquivos:6",
+      "tipo": "arquivos",
+      "label": "8 candidatos a vertiporto (heliponto ANAC mais proximo do centroide de demanda p...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:56.312430"
+    },
+    {
+      "id": "arquivos:7",
+      "tipo": "arquivos",
+      "label": "Matriz 8x8 de demanda capturavel por UAM entre macrorregioes",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:56.541732"
+    },
+    {
+      "id": "arquivos:8",
+      "tipo": "arquivos",
+      "label": "Grafico da curva de implantacao: economia de tempo total vs. numero de vertiport...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:56.748421"
+    },
+    {
+      "id": "arquivos:9",
+      "tipo": "arquivos",
+      "label": "Tabela dos 11 cenarios de analise de sensibilidade",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:56.965166"
+    },
+    {
+      "id": "arquivos:10",
+      "tipo": "arquivos",
+      "label": "Precos-sombra (variaveis duais) por candidato, relaxacao linear p=4",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:57.285016"
+    },
+    {
+      "id": "referencias:1",
+      "tipo": "referencias",
+      "label": "O'Kelly, M.E. (1987). A quadratic integer program for the location of interactin...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:50.310751"
+    },
+    {
+      "id": "referencias:2",
+      "tipo": "referencias",
+      "label": "Campbell, J.F. (1994). Integer programming formulations of discrete hub location...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:50.472989"
+    },
+    {
+      "id": "referencias:3",
+      "tipo": "referencias",
+      "label": "Alumur, S., & Kara, B.Y. (2008). Network hub location problems: The state of the...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:50.634767"
+    },
+    {
+      "id": "referencias:4",
+      "tipo": "referencias",
+      "label": "Booz Allen Hamilton / NASA (2018). Urban Air Mobility (UAM) Market Study. NASA N...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:50.798505"
+    },
+    {
+      "id": "referencias:5",
+      "tipo": "referencias",
+      "label": "Rimjha, M., & Trani, A. (2021). Commuter demand estimation and feasibility asses...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:50.963010"
+    },
+    {
+      "id": "referencias:6",
+      "tipo": "referencias",
+      "label": "New infrastructures for Urban Air Mobility systems: A systematic review on verti...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:51.126545"
+    },
+    {
+      "id": "referencias:7",
+      "tipo": "referencias",
+      "label": "Small, K.A. (2012). Valuation of travel time. Economics of Transportation, 1(1-2...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:51.290574"
+    },
+    {
+      "id": "experimentos:1",
+      "tipo": "experimentos",
+      "label": "relaxacao_linear",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:53.097384"
+    },
+    {
+      "id": "experimentos:2",
+      "tipo": "experimentos",
+      "label": "dual",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:53.460188"
+    },
+    {
+      "id": "experimentos:3",
+      "tipo": "experimentos",
+      "label": "sensibilidade",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:53.802885"
+    },
+    {
+      "id": "experimentos:4",
+      "tipo": "experimentos",
+      "label": "curva_implantacao",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:53.998214"
+    },
+    {
+      "id": "experimentos:5",
+      "tipo": "experimentos",
+      "label": "hub_median_p4",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:38:14.450716"
+    },
+    {
+      "id": "interacoes_ia:1",
+      "tipo": "interacoes_ia",
+      "label": "codigo",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:54.405608"
+    },
+    {
+      "id": "interacoes_ia:2",
+      "tipo": "interacoes_ia",
+      "label": "analise",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:24:54.627072"
+    },
+    {
+      "id": "interacoes_ia:3",
+      "tipo": "interacoes_ia",
+      "label": "formulacao",
+      "resp": "Vitor",
+      "criado_em": "2026-09-14 15:38:14.711177"
     }
   ],
-  "edges": []
+  "edges": [
+    {
+      "origem": "tarefas:1",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:2",
+      "destino": "metas:2",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:3",
+      "destino": "metas:2",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:4",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:5",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:6",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:7",
+      "destino": "metas:2",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:8",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:9",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "decisoes:10",
+      "destino": "metas:1",
+      "tipo": "pertence_a"
+    },
+    {
+      "origem": "arquivos:1",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:2",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:3",
+      "destino": "decisoes:2",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:4",
+      "destino": "decisoes:5",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:5",
+      "destino": "decisoes:10",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:6",
+      "destino": "decisoes:6",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:7",
+      "destino": "decisoes:7",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:8",
+      "destino": "decisoes:8",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:9",
+      "destino": "decisoes:7",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:10",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "experimentos:1",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "experimentos:2",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "experimentos:3",
+      "destino": "decisoes:7",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "experimentos:4",
+      "destino": "decisoes:8",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "experimentos:5",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "interacoes_ia:1",
+      "destino": "decisoes:10",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "interacoes_ia:2",
+      "destino": "experimentos:3",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "interacoes_ia:3",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "interacoes_ia:3",
+      "destino": "experimentos:5",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "decisoes:2",
+      "destino": "fontes_dados:1",
+      "tipo": "usa"
+    },
+    {
+      "origem": "decisoes:3",
+      "destino": "fontes_dados:1",
+      "tipo": "usa"
+    },
+    {
+      "origem": "decisoes:6",
+      "destino": "fontes_dados:2",
+      "tipo": "usa"
+    },
+    {
+      "origem": "referencias:1",
+      "destino": "decisoes:4",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "referencias:2",
+      "destino": "decisoes:4",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "referencias:3",
+      "destino": "decisoes:4",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "referencias:4",
+      "destino": "decisoes:7",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "referencias:5",
+      "destino": "decisoes:7",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "referencias:6",
+      "destino": "decisoes:7",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "referencias:7",
+      "destino": "decisoes:7",
+      "tipo": "apoia"
+    },
+    {
+      "origem": "decisoes:1",
+      "destino": "metas:3",
+      "tipo": "apoia"
+    }
+  ]
 }

@@ -1,0 +1,3 @@
+"modelo","objetivo_h_passageiro_dia","gap_pct"
+"MILP (h binario)",66712.4569856031,0
+"Relaxacao linear (h continuo)",66712.4569856031,1.09064452771596e-13

@@ -1,0 +1,40 @@
+
+===== 1. RELAXACAO LINEAR (p=4) =====
+Objetivo MILP: 66712.5 horas-passageiro/dia
+Objetivo LP relaxado: 66712.5 horas-passageiro/dia
+Gap de integralidade: 0%
+h_k na relaxacao (fracao aberta por candidato):
+  São Bernardo do Campo: 1
+  Guarulhos: 1
+  Brasilândia: 0
+  Mogi das Cruzes: 0
+  Osasco: 0
+  Itaim Bibi: 1
+  Jardim Paulista: 1
+  Grajaú: 0
+Numero de h_k fracionarios na relaxacao: 0
+
+Gap MILP vs. LP relaxado para todo p viavel (2..8):
+
+O gap e' 0% (h_k ja' sai inteiro na relaxacao) em TODOS os p testados, nao so' no p de referencia. Isso e' consistente com a formulacao de hub location de alocacao multipla sem restricao de capacidade: a submatriz das variaveis de fluxo x_ijkl tem estrutura proxima de um problema de fluxo em rede/transporte para h_k fixo, e o unico acoplamento inteiro esta' na cardinalidade (4) e nas ligacoes (2)-(3) -- o que, empiricamente nesta instancia pequena (8 regioes, sem capacidade), basta para que os vertices otimos da relaxacao ja' caiam em pontos inteiros. Isso NAO e' garantido em geral: assim que se adiciona uma restricao de capacidade por vertiporto (trabalho futuro, ver formulacao.md secao 7), essa integralidade tende a se perder e o gap deve aparecer.
+
+===== 2. DUAL (relaxacao linear, p=4) =====
+Preco-sombra (dual) agregado por candidato — horas-passageiro/dia economizadas por unidade de folga na capacidade de alocacao do vertiporto:
+Dual da restricao (4) [numero de vertiportos = p]: -18685.2297 horas-passageiro/dia por vertiporto adicional (custo marginal de reduzir p em 1
+
+Leitura economica: candidatos com preco-sombra mais negativo (em modulo, mais distante de zero) sao os vertiportos cuja folga de alocacao mais reduziria o tempo total se pudesse ser relaxada -- ou seja, sao os 'recursos' mais escassos da rede na configuracao com p=4. O dual de (4) mostra quanto tempo total (h-passageiro/dia) se ganharia abrindo mais um vertiporto -- e' o numero que sustenta, junto com a curva de implantacao (secao 4), a decisao de ate quando vale a pena aumentar p.
+
+===== 3. SENSIBILIDADE (p=4) =====
+
+Leitura: a demanda capturavel total (e portanto o beneficio absoluto) e' extremamente sensivel a theta (escala linear) e ao corte de renda (que muda QUAIS zonas de origem entram no modelo, nao so a escala). O conjunto de hubs abertos e' mais estavel a variacoes de v_acesso do que a mudancas no corte de renda -- ou seja, a decisao de ONDE localizar e' mais robusta a incerteza de velocidade de acesso do que a hipotese de quem e' o publico-alvo da demanda.
+
+===== 4. CURVA DE IMPLANTACAO =====
+Nota: p=1 e' inviavel por construcao neste modelo — um par de hub (k != l) exige pelo menos 2 vertiportos abertos, entao com p=1 nenhum voo e' possivel e a restricao (1) (toda a demanda tem que ser roteada) nao tem solucao viavel. Isto E' um resultado, nao um bug: mostra que uma rede de 1 vertiporto so' nao sustenta nenhuma rota de UAM neste desenho hub-and-spoke.
+Figura salva em app/results/figuras/curva_implantacao.png
+
+Leitura da curva: a economia marginal por vertiporto adicional cai a medida que p cresce (retornos decrescentes esperados em hub location: os primeiros vertiportos capturam os pares OD de maior fluxo/maior distancia, os seguintes capturam pares cada vez menores). O ponto em que a economia marginal fica pequena frente ao total acumulado e' o candidato natural a 'a partir de quantos vertiportos o retorno deixa de compensar' (Projeto_TRA48.pdf, 4.4) -- ver tabela completa em app/results/tabelas/04_curva_implantacao.csv para a leitura numerica exata por grupo, dado que a resposta depende de quanto se valoriza tempo economizado marginal vs. custo de expansao (que nao monetizamos, ver formulacao.md secao 5).
+
+===== 5. Monetizacao ilustrativa do beneficio (p=4) =====
+Renda familiar media (zonas elegiveis, ponderada por populacao): R$ 4588
+Valor do tempo assumido (40% do salario-hora implicito): R$ 7.65/h
+Economia monetizada (p=4): R$ 388.118/dia (ilustrativo — ver ressalva acima)
