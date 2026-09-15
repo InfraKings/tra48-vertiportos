@@ -50,6 +50,34 @@
       "criado_em": "2026-09-02 09:15:34.645325"
     },
     {
+      "id": "pendencias:3",
+      "tipo": "pendencias",
+      "label": "Apresentacao oral do grupo ainda nao existe (PDF 6.3) -- precisa cobrir as duas ...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:45:04.147651"
+    },
+    {
+      "id": "pendencias:4",
+      "tipo": "pendencias",
+      "label": "Decisoes e criticas de IA registradas ate agora (decisoes #2-#11, interacoes de ...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:45:04.337898"
+    },
+    {
+      "id": "pendencias:5",
+      "tipo": "pendencias",
+      "label": "Gilberto e Guilherme ainda sem nenhum commit ou registro proprio no banco de gov...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:45:04.526986"
+    },
+    {
+      "id": "pendencias:6",
+      "tipo": "pendencias",
+      "label": "Terceiro encontro de acompanhamento com o professor ainda nao agendado (PDF 7.2)",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:45:04.712651"
+    },
+    {
       "id": "decisoes:1",
       "tipo": "decisoes",
       "label": "Usar e-mails placeholder (nome@tra48.local) para git commit --author",

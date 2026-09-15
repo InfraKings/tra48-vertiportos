@@ -1,6 +1,6 @@
 -- dump.sql -- historia legivel do banco de governanca, gerada por ./gov update.
 -- Fonte de verdade e governanca/projeto.duckdb; este arquivo e derivado.
--- Gerado em 2026-09-15T12:37:32.185661
+-- Gerado em 2026-09-15T09:45:05.040127
 
 -- TRA-48 Projeto B1 -- Camada B (governanca)
 -- Esquema do banco de governanca / grafo executivo.
@@ -215,9 +215,13 @@ INSERT INTO metas (id, descricao, resp, criado_em, commit_hash) VALUES (4, 'Gara
 -- tarefas (1 linha(s))
 INSERT INTO tarefas (id, descricao, resp, prazo, meta_id, status, criado_em, concluida_em, commit_hash) VALUES (1, 'Avaliar extensao do modelo com opcao de nao-capturar demanda (arco ''nao-voar'' endogeno) para evitar economia de tempo negativa forcada em p baixo', 'Vitor', '2026-09-16', 1, 'aberta', '2026-09-14T15:24:59.557755', NULL, '89e3c4ef79a61775dee71b474b8d8e67f673c780');
 
--- pendencias (2 linha(s))
+-- pendencias (6 linha(s))
 INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (1, 'Link/repositorio-modelo do professor ainda nao distribuido -- por ora seguimos a estrutura propria do cap. 5 do PDF', 'Vitor', NULL, '2026-09-02T09:15:34.453841', NULL, NULL, 'ee7191300d69f67eadabded49ced6667f5cd623d');
 INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (2, 'Metas do projeto (2 a 4) ainda nao definidas/registradas no banco -- bloqueia registro de decisoes, tarefas e fontes vinculadas', 'Vitor', NULL, '2026-09-02T09:15:34.645325', '2026-09-14T14:58:13.833034', '4 metas registradas (#1-#4) cobrindo modelagem/resultados, demanda capturavel, governanca/reprodutibilidade e capacidade de defesa do grupo -- ver ''O que se espera ao final'', PDF 1.3', 'ee7191300d69f67eadabded49ced6667f5cd623d');
+INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (3, 'Apresentacao oral do grupo ainda nao existe (PDF 6.3) -- precisa cobrir as duas camadas (modelo + processo) e os indicadores minimos comparaveis entre grupos', 'Vitor', NULL, '2026-09-15T09:45:04.147651', NULL, NULL, 'c9c204d40aa6c9845f9be524b0dd68be249b627c');
+INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (4, 'Decisoes e criticas de IA registradas ate agora (decisoes #2-#11, interacoes de IA #1-#4) tem autoria Vitor mas ainda nao foram validadas/rediscutidas pelo grupo -- claude.md exige validacao humana da critica antes de vira registro definitivo', 'Vitor', NULL, '2026-09-15T09:45:04.337898', NULL, NULL, 'c9c204d40aa6c9845f9be524b0dd68be249b627c');
+INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (5, 'Gilberto e Guilherme ainda sem nenhum commit ou registro proprio no banco de governanca -- contribuicao individual e avaliada por autoria', 'Vitor', NULL, '2026-09-15T09:45:04.526986', NULL, NULL, 'c9c204d40aa6c9845f9be524b0dd68be249b627c');
+INSERT INTO pendencias (id, descricao, resp, meta_id, criado_em, resolvida_em, resolucao, commit_hash) VALUES (6, 'Terceiro encontro de acompanhamento com o professor ainda nao agendado (PDF 7.2)', 'Vitor', NULL, '2026-09-15T09:45:04.712651', NULL, NULL, 'c9c204d40aa6c9845f9be524b0dd68be249b627c');
 
 -- decisoes (11 linha(s))
 INSERT INTO decisoes (id, descricao, justificativa, alternativas_descartadas, resp, meta_id, criado_em, commit_hash) VALUES (1, 'Usar e-mails placeholder (nome@tra48.local) para git commit --author', 'A comunicacao do grupo e via WhatsApp, nao e-mail; git exige um e-mail para identificar autoria de cada commit, mas esse e-mail nao precisa ser real ou alcancavel -- e so um identificador tecnico do commit, sem uso para contato', 'Coletar e-mail real de cada integrante -- descartado porque criaria fricção sem necessidade real: o grupo nao usa e-mail no dia a dia, e o campo do git nao exige que o endereco funcione', 'Vitor', NULL, '2026-09-02T09:15:29.823944', 'ee7191300d69f67eadabded49ced6667f5cd623d');
