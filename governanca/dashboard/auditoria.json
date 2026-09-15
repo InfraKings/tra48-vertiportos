@@ -1,8 +1,8 @@
 {
-  "gerado_em": "2026-09-14T20:09:00.190586",
+  "gerado_em": "2026-09-15T09:37:05.697445",
   "rastreabilidade": {
     "pct_arquivos_vinculados_a_decisao": 1.0,
-    "pct_decisoes_vinculadas_a_meta": 0.9,
+    "pct_decisoes_vinculadas_a_meta": 0.9090909090909091,
     "pct_experimentos_vinculados_a_decisao": 1.0,
     "nos_orfaos": []
   },
@@ -13,7 +13,7 @@
     },
     {
       "semana": "2026-W37",
-      "registros": 17
+      "registros": 19
     }
   ],
   "higiene": {
@@ -22,7 +22,7 @@
   },
   "postura_critica_ia": {
     "distribuicao": {
-      "parcial": 3
+      "parcial": 4
     },
     "taxa_aceite_integral": 0.0,
     "alerta_aceite_alto": false

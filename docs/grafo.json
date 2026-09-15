@@ -120,6 +120,13 @@
       "criado_em": "2026-09-14 15:24:50.144889"
     },
     {
+      "id": "decisoes:11",
+      "tipo": "decisoes",
+      "label": "Recomendacao final: implantar entre p=4 e p=6 vertiportos, priorizando a rede de...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:37:04.553638"
+    },
+    {
       "id": "fontes_dados:1",
       "tipo": "fontes_dados",
       "label": "Pesquisa Origem e Destino 2017 -- Metro de Sao Paulo (Tabelas 1, 6, 25 + geometr...",
@@ -202,6 +209,34 @@
       "label": "Precos-sombra (variaveis duais) por candidato, relaxacao linear p=4",
       "resp": "Vitor",
       "criado_em": "2026-09-14 15:24:57.285016"
+    },
+    {
+      "id": "arquivos:11",
+      "tipo": "arquivos",
+      "label": "Relatorio de engenharia completo (fonte Markdown): contexto, literatura, dados, ...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:37:04.755225"
+    },
+    {
+      "id": "arquivos:12",
+      "tipo": "arquivos",
+      "label": "Relatorio de engenharia em PDF (entregavel formal, PDF secao 6.1), 11 paginas, c...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:37:04.943278"
+    },
+    {
+      "id": "arquivos:13",
+      "tipo": "arquivos",
+      "label": "Script que gera o mapa esquematico da rede de vertiportos recomendada (p=4) para...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:37:05.130802"
+    },
+    {
+      "id": "arquivos:14",
+      "tipo": "arquivos",
+      "label": "Mapa esquematico (UTM 23S): zonas OD por macrorregiao, candidatos e rede de hubs...",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:37:05.316601"
     },
     {
       "id": "referencias:1",
@@ -307,6 +342,13 @@
       "label": "formulacao",
       "resp": "Vitor",
       "criado_em": "2026-09-14 15:38:14.711177"
+    },
+    {
+      "id": "interacoes_ia:4",
+      "tipo": "interacoes_ia",
+      "label": "texto",
+      "resp": "Vitor",
+      "criado_em": "2026-09-15 09:37:05.502528"
     }
   ],
   "edges": [
@@ -361,6 +403,11 @@
       "tipo": "pertence_a"
     },
     {
+      "origem": "decisoes:11",
+      "destino": "metas:2",
+      "tipo": "pertence_a"
+    },
+    {
       "origem": "arquivos:1",
       "destino": "decisoes:4",
       "tipo": "vinculado_a"
@@ -411,6 +458,26 @@
       "tipo": "vinculado_a"
     },
     {
+      "origem": "arquivos:11",
+      "destino": "decisoes:11",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:12",
+      "destino": "decisoes:11",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:13",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "arquivos:14",
+      "destino": "decisoes:4",
+      "tipo": "vinculado_a"
+    },
+    {
       "origem": "experimentos:1",
       "destino": "decisoes:4",
       "tipo": "vinculado_a"
@@ -453,6 +520,11 @@
     {
       "origem": "interacoes_ia:3",
       "destino": "experimentos:5",
+      "tipo": "vinculado_a"
+    },
+    {
+      "origem": "interacoes_ia:4",
+      "destino": "decisoes:11",
       "tipo": "vinculado_a"
     },
     {
